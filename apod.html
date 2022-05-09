@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{APOD - NASA}</title>
+    <link rel="stylesheet" href="./css/apod.css"
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="./imgs/logo.png" />
+            <h1>{ NASA APod }</h1>
+        </div>
+        <nav id="lista">
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a id="today" href="#">Pic of the day</a></li>
+          </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="conteudo">
+          <form id="form">
+              <h2>Escolha uma data:</h2>
+              <input type="date" name="dia" id="data" required>
+              <button type="submit" name="botao" id="submit">Bora ver!</button>
+          </form>
+
+          <div id="conteudo-nasa">
+            
+          </div>
+        </div>
+
+    </main>
+    
+    <footer id="rodape">
+        <div id="copy">
+          <p>2022 © Todos os direitos reservados</p>
+          <p>NASA Apod - Desenvolvido por: Rômulo Miranda</p>
+        </div>
+        <div id="links">
+          <a href="https://github.com/romulo-m"><img src="./imgs/github.png" alt="Página do Github" id="github"/></a>
+          <a href="www.linkedin.com/in/romulo-omiranda"><img src="./imgs/linkedin.png" alt="Página do Linkedin" id="linkedin"/></a>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+    <script src="./script.js"></script>  
+</body>
+</html>
