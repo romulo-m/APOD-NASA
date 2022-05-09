@@ -39,6 +39,7 @@ $("#submit").click(function (e) {
         url: `https://api.nasa.gov/planetary/apod?api_key=O9l1VZayQdubP1HrqwxUGRxe5Zx86Y2DVaTTFFGh`,
         type: "GET",
         success: function (data) {
+          $('#data').val(data.date)
           $(`<h3 class="titulo-img">${data.title}</h3>`).appendTo('#conteudo-nasa')
           req(data)
           $(`<p class="descricao">${data.explanation}</p>`).appendTo('#conteudo-nasa')
