@@ -1,16 +1,16 @@
-$('form').hide().fadeIn(5000)
+$('form').hide().fadeIn(2000)
 
 //Requisição de envio ao clicar no botão
 $("#submit").click(function (e) {
   e.preventDefault()
-  let dia = $("#data").val(); 
-  $('.titulo-img, .foto, .video, .descricao').remove()   
+  let dia = $("#data").val();    
     $.ajax({
       url: `https://api.nasa.gov/planetary/apod?api_key=O9l1VZayQdubP1HrqwxUGRxe5Zx86Y2DVaTTFFGh&date=${dia}`,
       type: "GET",
       success: function (data) {
+        $('.titulo-img, .foto, .video, .descricao').remove()
         $(`<h3 class="titulo-img">${data.title}</h3>`).appendTo('#conteudo-nasa')
-        req(data)
+        teste(data)
         $(`<p class="descricao">${data.explanation}</p>`).appendTo('#conteudo-nasa')
         
       },
@@ -18,7 +18,7 @@ $("#submit").click(function (e) {
   });
 
   //Função que pega os dados e escreve, e valida se é foto ou vídeo.
-  function req(data) {
+  function teste(data) {
     $('.titulo-img').text(data.title);
     $('.descricao').text(data.explanation)
     if(data.media_type == 'image') {
@@ -33,15 +33,15 @@ $("#submit").click(function (e) {
 
   //Requisição da data de hoje
   $("#today").click(function (e) {
-    e.preventDefault()  
-    $('.titulo-img,.foto, .video, .descricao').remove() 
+    e.preventDefault()   
       $.ajax({
         url: `https://api.nasa.gov/planetary/apod?api_key=O9l1VZayQdubP1HrqwxUGRxe5Zx86Y2DVaTTFFGh`,
         type: "GET",
         success: function (data) {
+          $('.titulo-img,.foto, .video, .descricao').remove()
           $('#data').val(data.date)
           $(`<h3 class="titulo-img">${data.title}</h3>`).appendTo('#conteudo-nasa')
-          req(data)
+          teste(data)
           $(`<p class="descricao">${data.explanation}</p>`).appendTo('#conteudo-nasa')
         },
       });
