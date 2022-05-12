@@ -104,8 +104,11 @@ header {
     font-family: Raleway, cursive;
   }
 
+  
   #data {
     padding: 0.22rem;
+    background-color: #c8c8c8;
+    text-align: center;
   }
 
   input, button {
